@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
-
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 function Weather() {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const city = 'Akola';
 
+
+
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f00c38e0279b7bc85480c3fe775d518c&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
       .then(res => res.json())
       .then(data => {
         if (data.cod === 200) {
