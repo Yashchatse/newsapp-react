@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 const apiKey = import.meta.env.VITE_NEWS_API_KEY;
-fetch()
+
 
 function TopHeadlines() {
   const [articles, setArticles] = useState([]);
