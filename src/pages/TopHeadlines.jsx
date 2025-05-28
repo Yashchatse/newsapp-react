@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+const apiKey = import.meta.env.VITE_NEWS_API_KEY;
+fetch()
 
 function TopHeadlines() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=8e6b3c41ddf74dee89588b90c2a52c7e`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`)
       .then(res => res.json())
       .then(data => setArticles(data.articles) )
       .catch(err => console.error(err));
